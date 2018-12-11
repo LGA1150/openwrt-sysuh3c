@@ -33,6 +33,8 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_CONF) ./files/sysuh3c.config $(1)/etc/config/sysuh3c
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/sysuh3c.init $(1)/etc/init.d/sysuh3c
+	$(INSTALL_DIR) $(1)/etc/uci-defaults
+	$(INSTALL_DATA) ./files/sysuh3c.defaults $(1)/etc/uci-defaults/sysuh3c
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
