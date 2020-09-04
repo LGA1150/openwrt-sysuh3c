@@ -13,8 +13,8 @@ PKG_LICENSE_FILES:=LICENSE
 
 include $(INCLUDE_DIR)/package.mk
 
-TARGET_CFLAGS += -ffunction-sections -fdata-sections -flto
-TARGET_LDFLAGS += -Wl,--gc-sections -flto
+TARGET_CFLAGS += -ffunction-sections -fdata-sections -fcommon -flto
+TARGET_LDFLAGS += -Wl,--gc-sections,--as-needed
 
 define Package/$(PKG_NAME)
 	SECTION:=net
